@@ -21,10 +21,10 @@ const collections = [
     href: "/collections#accessoires",
   },
   {
-    title: "Maillots de bain",
-    description: "Des coupes qui subliment chaque silhouette.",
+    title: "Lingerie Invisible",
+    description: "Magic Bodyfashion — maintien invisible, effet naturel.",
     image: "https://scontent.fppt1-1.fna.fbcdn.net/v/t39.30808-6/646561728_1432834178541927_1357319315213211448_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_ohc=dhugReP7mgcQ7kNvwEp48m5&_nc_oc=AdoaZqdmLYVGjg0p2iKDax6Q1bBRvtZ-3tjJI_qDWHoudYVquT7zki2lQHwUUsZ0A64&_nc_zt=23&_nc_ht=scontent.fppt1-1.fna&_nc_gid=XrNVCINf5_jZyx6ldl3GLg&_nc_ss=7a32e&oh=00_Afy9QZ8bF2w03IkO7jEGlKjd9I3vl31j7FUDXtD2Gcx5Ew&oe=69C8E828",
-    href: "/collections#maillots",
+    href: "/collections#lingerie-invisible",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://scontent.fppt1-1.fna.fbcdn.net/v/t39.30808-6/646774537_1435045944987417_1470130025130550802_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=2a1932&_nc_ohc=3ifoxoQWfTIQ7kNvwGLurj4&_nc_oc=Adog-6sinhgHG8H8H_EJv4jC6zci9tYMrOANYkAvm3NmHTIKBCBGom1Con5gYoE3CGo&_nc_zt=23&_nc_ht=scontent.fppt1-1.fna&_nc_gid=M-fqDqcQ96Eo7x3xVzhy2A&_nc_ss=7a32e&oh=00_Afx0Wq4zrgDCLhW5FhqKKQXAePAcQa4M88cEz1Ifez9c8w&oe=69C8E39F')",
+              "url('https://media.istockphoto.com/id/1333590976/photo/cosmetic-cream-background-design.jpg?s=612x612&w=0&k=20&c=sWhFBIbHFyks6Tv2OHw08nQzG_pal3Oiu53PcT_Mcnc=')",
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
