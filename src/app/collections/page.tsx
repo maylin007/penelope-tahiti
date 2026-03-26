@@ -96,7 +96,7 @@ export default function CollectionsPage() {
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}>
               {collection.items.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <div>
