@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PhoneButton from "@/components/PhoneButton";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,10 +58,12 @@ export default function RootLayout({
           "url": "https://penelope-tahiti.vercel.app",
           "sameAs": ["https://www.facebook.com/penelopetahitiboutique/"]
         })}} />
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <PhoneButton />
+        <LanguageProvider>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <PhoneButton />
+        </LanguageProvider>
       </body>
     </html>
   );

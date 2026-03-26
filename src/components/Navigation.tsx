@@ -3,12 +3,15 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations, t } from "@/lib/translations";
+import LanguageToggle from "./LanguageToggle";
 
-const links = [
-  { href: "/", label: "Accueil" },
-  { href: "/collections", label: "Collections" },
-  { href: "/la-boutique", label: "La Boutique" },
-  { href: "/contact", label: "Contact" },
+const linkKeys: { href: string; key: keyof typeof translations.nav }[] = [
+  { href: "/", key: "accueil" },
+  { href: "/collections", key: "collections" },
+  { href: "/la-boutique", key: "laBoutique" },
+  { href: "/contact", key: "contact" },
 ];
 
 export default function Navigation() {
@@ -16,6 +19,7 @@ export default function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(!isHome);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     if (!isHome) {
@@ -42,19 +46,19 @@ export default function Navigation() {
                 scrolled ? "text-dark" : "text-white"
               }`}
             >
-              Pénélope
+              P&eacute;n&eacute;lope
             </span>
             <span
               className={`text-[9px] tracking-[0.25em] uppercase transition-colors duration-500 ${
                 scrolled ? "text-muted" : "text-white/60"
               }`}
             >
-              Lingerie &amp; Prêt-à-porter
+              {t(translations.nav.subtitle, lang)}
             </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
-            {links.map((link) => (
+            {linkKeys.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -68,39 +72,43 @@ export default function Navigation() {
                       : "text-white/70 hover:text-white"
                 }`}
               >
-                {link.label}
+                {t(translations.nav[link.key], lang)}
               </Link>
             ))}
+            <LanguageToggle scrolled={scrolled} />
             <a
               href="tel:+68940429387"
               className="text-[13px] tracking-wide uppercase border border-brand bg-brand text-white px-5 py-2.5 transition-all duration-300 hover:bg-brand-dark hover:border-brand-dark"
             >
-              Nous appeler
+              {t(translations.nav.nousAppeler, lang)}
             </a>
           </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            aria-label="Menu" aria-expanded={isOpen}
-          >
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className={`w-6 h-px transition-all duration-300 ${
-                  scrolled ? "bg-dark" : "bg-white"
-                } ${
-                  isOpen && i === 0
-                    ? "rotate-45 translate-y-[4px]"
-                    : isOpen && i === 1
-                      ? "opacity-0"
-                      : isOpen && i === 2
-                        ? "-rotate-45 -translate-y-[4px]"
-                        : ""
-                }`}
-              />
-            ))}
-          </button>
+          <div className="flex md:hidden items-center gap-3">
+            <LanguageToggle scrolled={scrolled} />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex flex-col gap-1.5 p-2"
+              aria-label="Menu" aria-expanded={isOpen}
+            >
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className={`w-6 h-px transition-all duration-300 ${
+                    scrolled ? "bg-dark" : "bg-white"
+                  } ${
+                    isOpen && i === 0
+                      ? "rotate-45 translate-y-[4px]"
+                      : isOpen && i === 1
+                        ? "opacity-0"
+                        : isOpen && i === 2
+                          ? "-rotate-45 -translate-y-[4px]"
+                          : ""
+                  }`}
+                />
+              ))}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -110,7 +118,7 @@ export default function Navigation() {
         }`}
       >
         <div className="px-6 pb-6 pt-2 flex flex-col gap-1">
-          {links.map((link) => (
+          {linkKeys.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -119,14 +127,14 @@ export default function Navigation() {
                 pathname === link.href ? "text-brand" : "text-dark"
               }`}
             >
-              {link.label}
+              {t(translations.nav[link.key], lang)}
             </Link>
           ))}
           <a
             href="tel:+68940429387"
             className="mt-4 text-center text-[13px] tracking-wide uppercase border border-brand bg-brand text-white px-5 py-3"
           >
-            Nous appeler — 40 42 93 87
+            {t(translations.nav.nousAppeler, lang)} — 40 42 93 87
           </a>
         </div>
       </div>
