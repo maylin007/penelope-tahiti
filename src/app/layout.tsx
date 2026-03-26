@@ -18,6 +18,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://penelope-tahiti.vercel.app"),
   title: {
     default: "Boutique Pénélope — Papeete, Tahiti",
     template: "%s — Boutique Pénélope",
@@ -32,6 +33,10 @@ export const metadata: Metadata = {
     "Lise Charmel Papeete",
     "Penelope Tahiti",
   ],
+  alternates: {
+    canonical: "https://penelope-tahiti.vercel.app",
+    languages: { "fr": "https://penelope-tahiti.vercel.app", "en": "https://penelope-tahiti.vercel.app" },
+  },
   openGraph: {
     title: "Boutique Pénélope — Papeete, Tahiti",
     description: "Lingerie fine, maillots de bain et prêt-à-porter depuis 41 ans à Papeete.",
@@ -56,6 +61,10 @@ export default function RootLayout({
           "telephone": "+68940429387",
           "openingHours": ["Mo-Fr 08:30-17:00", "Sa 08:30-14:00"],
           "url": "https://penelope-tahiti.vercel.app",
+          "description": "Boutique de lingerie fine, maillots de bain et prêt-à-porter à Papeete depuis 41 ans. Aubade, Lise Charmel, Huit.",
+          "foundingDate": "1985",
+          "priceRange": "$$",
+          "geo": { "@type": "GeoCoordinates", "latitude": -17.535, "longitude": -149.567 },
           "sameAs": ["https://www.facebook.com/penelopetahitiboutique/"]
         })}} />
         <LanguageProvider>
