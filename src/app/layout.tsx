@@ -47,6 +47,16 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ClothingStore",
+          "name": "Boutique Pénélope",
+          "address": { "@type": "PostalAddress", "streetAddress": "Rue Lagarde", "addressLocality": "Papeete", "postalCode": "98713", "addressCountry": "PF" },
+          "telephone": "+68940429387",
+          "openingHours": ["Mo-Fr 08:30-17:00", "Sa 08:30-14:00"],
+          "url": "https://penelope-tahiti.vercel.app",
+          "sameAs": ["https://www.facebook.com/penelopetahitiboutique/"]
+        })}} />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
