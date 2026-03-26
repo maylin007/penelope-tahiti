@@ -96,7 +96,7 @@ export default function CollectionsPage() {
               </div>
             </AnimatedSection>
 
-            <div className={`grid gap-6 ${collection.items.length === 4 ? "grid-cols-2 md:grid-cols-4" : "grid-cols-1 md:grid-cols-3"}`}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {collection.items.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.1}>
                   <div>
