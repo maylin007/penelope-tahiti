@@ -37,6 +37,11 @@ export default function ContactPage() {
                   </div>
 
                   <div className="border-t border-divider pt-10">
+                    <p className="text-[11px] tracking-[0.3em] uppercase text-accent mb-4">Facebook</p>
+                    <a href="https://www.facebook.com/penelopetahitiboutique/" target="_blank" rel="noopener noreferrer" className="text-dark text-[15px] hover:text-brand transition-colors">Boutique Penelope Tahiti</a>
+                  </div>
+
+                  <div className="border-t border-divider pt-10">
                     <p className="text-[11px] tracking-[0.3em] uppercase text-accent mb-4">Adresse</p>
                     <p className="text-dark text-[15px]">Rue Lagarde</p>
                     <p className="text-dark text-[15px]">Papeete 98713, Tahiti</p>
