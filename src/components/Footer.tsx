@@ -64,7 +64,8 @@ export default function Footer() {
               </svg>
               <div>
                 <p className="text-[10px] tracking-[0.2em] uppercase text-white/40">Horaires</p>
-                <p className="text-white/80">Lun — Ven : 8h30 — 17h &middot; Sam : 8h30 — 14h</p>
+                <p className="text-white/80">Lun — Ven : 8h30 — 17h</p>
+                <p className="text-white/80">Sam : 8h30 — 14h</p>
               </div>
             </div>
           </div>
