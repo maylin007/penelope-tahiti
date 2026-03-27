@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PhoneButton from "@/components/PhoneButton";
+import ChatWidget from "@/components/ChatWidget";
 import { LanguageProvider } from "@/lib/LanguageContext";
 
 const inter = Inter({
@@ -72,6 +73,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <PhoneButton />
+          <ChatWidget />
         </LanguageProvider>
       </body>
     </html>
