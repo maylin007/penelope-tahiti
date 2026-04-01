@@ -73,7 +73,11 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <PhoneButton />
-          <ChatWidget />
+          <ChatWidget
+            brandName="Boutique Pénélope"
+            phone="40 42 93 87"
+            suggestedQuestions={["Quels sont vos horaires ?", "Quelles marques avez-vous ?", "Où êtes-vous situé ?"]}
+          />
         </LanguageProvider>
       </body>
     </html>
